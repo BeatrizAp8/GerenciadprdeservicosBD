@@ -12,12 +12,13 @@ use App\Models\Servico;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('index');
-});
-
-
-Route::get('consulta', function () {
-    return view('consulta');
+   $meuPrimeiroServico = new Servico;
+   $meuPrimeiroServico->nome = "Escritora";
+   $meuPrimeiroServico->telefone = "118748934";
+   $meuPrimeiroServico->origem = "Celular";
+   $meuPrimeiroServico->data = "2023-02-13";
+   $meuPrimeiroServico->observacao = "Não tenho editora";
+   $meuPrimeiroServico->save();
+   return view('index');
 });
